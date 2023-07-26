@@ -34,5 +34,4 @@ final class github_actions_demo_iosTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
