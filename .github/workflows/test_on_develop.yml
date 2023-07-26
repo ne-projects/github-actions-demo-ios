@@ -22,4 +22,4 @@ jobs:
     - name: Start xcode build 🛠
       run: |
         pod install --repo-update --clean-install --project-directory=../github-actions-demo-ios/
-        xcodebuild clean test -workspace github-actions-demo-ios/github-actions-demo-ios.xcworkspace -scheme github-actions-demo-ios -destination 'platform=iOS Simulator,name=iPhone 13 Pro,OS=latest'
+        xcodebuild clean test -workspace github-actions-demo-ios.xcworkspace -scheme github-actions-demo-ios -destination 'platform=iOS Simulator,name=iPhone 13 Pro,OS=latest'
