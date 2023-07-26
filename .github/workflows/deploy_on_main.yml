@@ -24,7 +24,7 @@ jobs:
       
       env:
         APPLE_ID: ${{ secrets.APPLE_ID }}
-        APP_IDENTIFIER: ${{ secrets.APPLE_IDENTIFIER }}
+        APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
         TEAM_ID: ${{ secrets.TEAM_ID }}
         ITC_TEAM_ID: ${{ secrets.ITC_TEAM_ID }}
         APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY_ID }}
