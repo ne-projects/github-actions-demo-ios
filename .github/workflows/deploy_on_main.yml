@@ -17,4 +17,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: upload testflight
-      run: fastlane beta
+      run: |
+        brew install fastlane
+        pod install --repo-update --clean-install --project-directory=../github-actions-demo-ios/
+        fastlane beta
+      
+      env:
+        APPLE_ID: ${{ secrets.APPLE_ID }}
+        APP_IDENTIFIER: ${{ secrets.APPLE_IDENTIFIER }}
+        TEAM_ID: ${{ secrets.TEAM_ID }}
+        ITC_TEAM_ID: ${{ secrets.ITC_TEAM_ID }}
+        APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY_ID }}
+        APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
+        APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
+        APP_STORE_CONNECT_API_KEY_IS_KEY_CONTENT_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_IS_KEY_CONTENT_BASE64 }}

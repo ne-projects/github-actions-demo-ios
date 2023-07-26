@@ -101,7 +101,6 @@
 				A2258B9324DCB67CFE531C0B /* Pods-github-actions-demo-iosTests.debug.xcconfig */,
 				03BD4595FD2EC98BBDE6438A /* Pods-github-actions-demo-iosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
