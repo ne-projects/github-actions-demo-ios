@@ -33,7 +33,7 @@ platform :ios do
     )
     gym(
         clean: true,
-        configuration: "Release"
+        configuration: "Release",
         export_method: "app-store"
     )
 
