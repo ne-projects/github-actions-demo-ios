@@ -20,16 +20,23 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
     app_store_connect_api_key
-    get_provisioning_profile
+    match(
+        type: "appstore",
+        readonly: true,
+        keychain_name: ENV["KEYCHAIN_NAME"],
+        keychain_password: ENV["KEYCHAIN_PASSWORD"]
+    )
+    clear_derived_data
     increment_build_number(
         xcodeproj: "github-actions-demo-ios.xcodeproj",
         build_number: date_based_build_number
     )
-
-    build_app(
-        scheme: "github-actions-demo-ios",
+    gym(
+        clean: true,
         configuration: "Release"
+        export_method: "app-store"
     )
+
     upload_to_testflight(skip_waiting_for_build_processing: true)
   end
 end
@@ -43,7 +50,7 @@ def default_build_number
 end
 
 def date_based_build_number
-  current_build_number = get_build_number(xcodeproj: "buildandgrow-app-ios.xcodeproj")
+  current_build_number = get_build_number(xcodeproj: "github-actions-demo-ios.xcodeproj")
 
   build_date = current_build_number[0..7]
   build_version = current_build_number[8..9]

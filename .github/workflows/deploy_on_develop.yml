@@ -11,6 +11,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - uses: maierj/fastlane-action@v3.0.0
+    
     - name: upload testflight
       run: |
         brew install fastlane
@@ -18,10 +21,7 @@ jobs:
         fastlane beta
       
       env:
-        APPLE_ID: ${{ secrets.APPLE_ID }}
-        APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
-        TEAM_ID: ${{ secrets.TEAM_ID }}
-        ITC_TEAM_ID: ${{ secrets.ITC_TEAM_ID }}
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY_ID }}
         APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
         APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
