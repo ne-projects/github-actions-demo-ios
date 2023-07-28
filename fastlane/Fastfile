@@ -24,7 +24,6 @@ platform :ios do
 	git_url: ENV["GIT_URL"],
         type: "appstore",
 	storage_mode: "git",
-        readonly: true,
         keychain_name: ENV["KEYCHAIN_NAME"],
         keychain_password: ENV["KEYCHAIN_PASSWORD"],
 	app_identifier: [ENV["APP_IDENTIFIER"]],
