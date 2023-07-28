@@ -22,6 +22,7 @@ jobs:
         fastlane beta
       
       env:
+	GIT_URL: ${{ secrets.GIT_URL }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         KEYCHAIN_NAME: ${{ secrets.KEYCHAIN_NAME }}
         KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
