@@ -21,10 +21,14 @@ platform :ios do
   lane :beta do
     app_store_connect_api_key
     match(
+	git_url: ENV["GIT_URL"],
         type: "appstore",
+	storage_mode: "git",
         readonly: true,
         keychain_name: ENV["KEYCHAIN_NAME"],
-        keychain_password: ENV["KEYCHAIN_PASSWORD"]
+        keychain_password: ENV["KEYCHAIN_PASSWORD"],
+	app_identifier: ENV["APP_IDENTIFIER"],
+	username: ENV["APPLE_ID"]
     )
     clear_derived_data
     increment_build_number(
