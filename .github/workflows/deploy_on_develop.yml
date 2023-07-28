@@ -24,7 +24,7 @@ jobs:
       env:
         GIT_URL: ${{ secrets.GIT_URL }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-        APPLE_ID = ${{ secrets.APPLE_ID }}
+        APPLE_ID: ${{ secrets.APPLE_ID }}
         KEYCHAIN_NAME: ${{ secrets.KEYCHAIN_NAME }}
         KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY_ID }}
