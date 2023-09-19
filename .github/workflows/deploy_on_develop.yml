@@ -16,10 +16,9 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: upload testflight
-      run: |
-        brew install fastlane
-        pod install --repo-update --clean-install --project-directory=../github-actions-demo-ios/
-        fastlane beta
+    - run: brew install fastlane
+    - run: pod install
+    - run: fastlane beta
       
       env:
         GIT_URL: ${{ secrets.GIT_URL }}
