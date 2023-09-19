@@ -17,6 +17,13 @@ default_platform(:ios)
 skip_docs
 
 platform :ios do
+  desc "Run Tests"
+  lane :tests do
+    run_tests(workspace: "github-actions-demo-ios.xcworkspace",
+               devices: ["iPhone 6s"],
+               scheme: "github-actions-demo-iosTests")
+  end
+
   desc "Push a new beta build to TestFlight"
   lane :beta do
     create_keychain( 
