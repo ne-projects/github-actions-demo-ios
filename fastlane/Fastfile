@@ -48,7 +48,8 @@ platform :ios do
         build_number: date_based_build_number
     )
     gym(
-        clean: true,
+        workspace: "github-actions-demo-ios.xcworkspace",
+        scheme: "github-actions-demo-ios",
         configuration: "Release",
         export_method: "app-store"
     )
