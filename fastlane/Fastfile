@@ -49,13 +49,13 @@ platform :ios do
 	#app_identifier: [ENV["APP_IDENTIFIER"]],
 	username: ENV["APPLE_ID"]
     )
-    clear_derived_data
+    # clear_derived_data
     increment_build_number(
         xcodeproj: "github-actions-demo-ios.xcodeproj",
         build_number: date_based_build_number
     )
     gym(
-        clean: true,
+        # clean: true,
         workspace: "github-actions-demo-ios.xcworkspace",
         scheme: "github-actions-demo-ios",
         configuration: "Release",
