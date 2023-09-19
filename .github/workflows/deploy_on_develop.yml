@@ -23,7 +23,6 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: upload testflight
     - run: brew install fastlane
     - run: pod install
     - run: fastlane beta
