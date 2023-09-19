@@ -14,8 +14,6 @@ jobs:
       with:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
-    - uses: actions/setup-node@v3.8.1
-    - uses: ruby/setup-ruby@v1.153.0
     - run: brew install fastlane
     - run: pod install
     - run: fastlane beta
