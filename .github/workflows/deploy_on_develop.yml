@@ -14,7 +14,7 @@ jobs:
       with:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
-    - run: brew install fastlane
+    - run: gem install fastlane --version 2.215.0
     - run: pod install
     - run: fastlane beta
       
