@@ -44,11 +44,12 @@ platform :ios do
     match(
 	git_url: ENV["GIT_URL"],
         type: "appstore",
-	storage_mode: "git",
+        storage_mode: "git",	
         keychain_name: ENV["KEYCHAIN_NAME"],
         keychain_password: ENV["KEYCHAIN_PASSWORD"],
 	#app_identifier: [ENV["APP_IDENTIFIER"]],
-	username: ENV["APPLE_ID"]
+       	username: ENV["APPLE_ID"],
+        team_id: ENV["TEAM_ID"]
     )
     # clear_derived_data
     increment_build_number(
