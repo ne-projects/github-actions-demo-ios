@@ -60,7 +60,7 @@ platform :ios do
         workspace: "github-actions-demo-ios.xcworkspace",
         scheme: "github-actions-demo-ios",
         configuration: "Release",
-        export_method: {
+        export_options: {
           method: "app-store",
           signingStyle: "manual"
         }
