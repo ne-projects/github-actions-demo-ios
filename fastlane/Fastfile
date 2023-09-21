@@ -60,7 +60,10 @@ platform :ios do
         workspace: "github-actions-demo-ios.xcworkspace",
         scheme: "github-actions-demo-ios",
         configuration: "Release",
-        export_method: "app-store"
+        export_method: {
+          method: "app-store",
+          signingStyle: "manual"
+        }
     )
 
     upload_to_testflight(skip_waiting_for_build_processing: true)
