@@ -72,7 +72,7 @@ platform :ios do
     commit_version_bump(
       message: "업데이트 버전: #{version_number}"
     )
-    add_git_tag(tag: "v#{version_number}")
+    add_git_tag(tag: "v#{lane_context[SharedValues::VERSION_NUMBER]}")
     push_to_git_remote
   end   
 end
