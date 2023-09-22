@@ -26,15 +26,15 @@ platform :ios do
 
   desc "Push a new beta build to TestFlight"
   lane :beta do
-    #setup_ci if ENV['CI']
-    create_keychain( 
-      name: ENV["KEYCHAIN_NAME"],
-      password: ENV["KEYCHAIN_PASSWORD"],
-      timeout: 1800,
-      default_keychain: true,
-      unlock: true,
-      lock_when_sleeps: false
-    )
+    setup_ci if ENV['CI']
+    #create_keychain( 
+     # name: ENV["KEYCHAIN_NAME"],
+     # password: ENV["KEYCHAIN_PASSWORD"],
+     # timeout: 1800,
+     # default_keychain: true,
+     # unlock: true,
+     # lock_when_sleeps: false
+    #)
     app_store_connect_api_key(
       key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
       issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
@@ -45,8 +45,8 @@ platform :ios do
 	git_url: ENV["GIT_URL"],
         type: "appstore",
         storage_mode: "git",	
-        keychain_name: ENV["KEYCHAIN_NAME"],
-        keychain_password: ENV["KEYCHAIN_PASSWORD"],
+        #keychain_name: ENV["KEYCHAIN_NAME"],
+        #keychain_password: ENV["KEYCHAIN_PASSWORD"],
 	#app_identifier: [ENV["APP_IDENTIFIER"]],
        	username: ENV["APPLE_ID"],
         team_id: ENV["TEAM_ID"],
