@@ -27,14 +27,7 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
     setup_ci if ENV['CI']
-    #create_keychain( 
-     # name: ENV["KEYCHAIN_NAME"],
-     # password: ENV["KEYCHAIN_PASSWORD"],
-     # timeout: 1800,
-     # default_keychain: true,
-     # unlock: true,
-     # lock_when_sleeps: false
-    #)
+    
     app_store_connect_api_key(
       key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
       issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
@@ -45,20 +38,18 @@ platform :ios do
 	git_url: ENV["GIT_URL"],
         type: "appstore",
         storage_mode: "git",	
-        #keychain_name: ENV["KEYCHAIN_NAME"],
-        #keychain_password: ENV["KEYCHAIN_PASSWORD"],
-	#app_identifier: [ENV["APP_IDENTIFIER"]],
-       	username: ENV["APPLE_ID"],
-        team_id: ENV["TEAM_ID"],
         readonly: true
     )
-    # clear_derived_data
+
+    clear_derived_data
+
     increment_build_number(
         xcodeproj: "github-actions-demo-ios.xcodeproj",
         build_number: date_based_build_number
     )
+
     gym(
-        # clean: true,
+        clean: true,
         workspace: "github-actions-demo-ios.xcworkspace",
         scheme: "github-actions-demo-ios",
         configuration: "Release",
